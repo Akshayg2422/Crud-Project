@@ -6,6 +6,8 @@ import { Provider } from 'react-redux'
 import { store, persistor } from './Store/store'
 import { PersistGate } from 'redux-persist/integration/react';
 import CrudUsingRedux from './Components/CrudUsingRedux'
+import Crud from './Components/Crud';
+import Counter from './Components/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -13,7 +15,9 @@ root.render(
 
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <CrudUsingRedux/>
+            {/* <Counter /> */}
+            {/* <Crud /> */}
+            <CrudUsingRedux />
         </PersistGate>
     </Provider>
 

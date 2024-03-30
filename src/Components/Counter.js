@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css'
+import '../App.css'
 
 
 function Counter() {
@@ -49,13 +49,16 @@ function Counter() {
   }
 
   return (
-    <div>
-      <h1 style={{ color: colorStyle }}>{count}</h1>
-      <button onClick={incrementHandler}>{'Increment'}</button>
-      <button onClick={PauseHandler}>{'Pause'}</button>
-      <button onClick={ResetHandler}>{'Reset'}</button>
-      <button onClick={decrementHandler}>{'Decrement'}</button>
+    <div className={'container vh-100 d-flex justify-content-center align-items-center'}>
+      <div className={'text-center'}>
+        <h1 className={'mr-5'} style={{ color: colorStyle }}>{count}</h1>
+        <button onClick={incrementHandler}>{'Increment'}</button>
+        <button className={'ml-2'} onClick={PauseHandler}>{'Pause'}</button>
+        <button className={'ml-2'} onClick={ResetHandler}>{'Reset'}</button>
+        <button className={'ml-2'} onClick={decrementHandler}>{'Decrement'}</button>
+      </div>
     </div>
+
   );
 }
 
