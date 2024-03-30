@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Counter from './Counter';
-import Crud from './Crud';
 import { Provider } from 'react-redux'
-import CrudUsingRedux from './CrudUsingRedux';
 import { store, persistor } from './Store/store'
 import { PersistGate } from 'redux-persist/integration/react';
+import CrudUsingRedux from './Components/CrudUsingRedux'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,8 +13,7 @@ root.render(
 
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            {/* <Crud /> */}
-            <CrudUsingRedux />
+          <CrudUsingRedux/>
         </PersistGate>
     </Provider>
 
