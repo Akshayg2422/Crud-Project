@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+button {
+  padding: 8px;
+  margin: 10px 0px 10px 0px;
+  border: none;
+  border-radius: 3px;
+  background-color: #5bb1ea;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button:hover {
+  background-color: #315d7b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  margin-left: 13%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 4px;
+  margin: 2px 0px 2px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+input:focus {
+  outline: none;
+  border-color: #5bb1ea;
+  box-shadow: 0px 0px 5px #276893;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.Edit {
+  color: #5bb1ea;
+  cursor: pointer;
+}
+
+.Delete {
+  color: red;
+  cursor: pointer;
 }
