@@ -7,7 +7,7 @@ const Crud = () => {
     const [password, setPassword] = useState('')
     const [userData, setUserData] = useState([])
     const [error, setError] = useState('')
-    const [isTable, setIsTable] = useState(false)
+    const [view, setView] = useState(false)
     const [editingIndex, setEditingIndex] = useState(null)
 
 
@@ -15,8 +15,7 @@ const Crud = () => {
         e.preventDefault()
 
         if (!name || !email || !mobileNo || !password) {
-            setError('All fields are required')
-            // return
+            return setError('All fields are required')
         }
 
         if (editingIndex !== null) {
@@ -39,7 +38,7 @@ const Crud = () => {
         setMobileNo('')
         setPassword('')
         setError('')
-        setIsTable(true)
+        setView(true)
     }
 
     const handleEdit = (index) => {
@@ -49,7 +48,7 @@ const Crud = () => {
         setMobileNo(selectedUserData.mobileNo)
         setPassword(selectedUserData.password)
         setEditingIndex(index)
-        setIsTable(false)
+        setView(false)
     }
 
     const handleDelete = (index) => {
@@ -60,7 +59,7 @@ const Crud = () => {
 
     return (
         <div className='Form'>
-            {!isTable && <div className='vh-100 d-flex justify-content-center align-items-center'>
+            {!view && <div className='vh-100 d-flex justify-content-center align-items-center'>
 
                 <form onSubmit={handleSubmit}>
                     <label className='h6' htmlFor={'name'}>Name</label>
@@ -77,20 +76,20 @@ const Crud = () => {
                     </div>
                     <label className='h6' htmlFor={'pswd'}>Password</label>
                     <div>
-                        <input type='password' id='pswd' value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                        <input type='password' id='pswd' disabled={`${editingIndex !== null ? !view : ''}`} value={password} onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
                     {error && <h6 className='text-center text-danger'>{error}</h6>}
                     <div className='text-center'>
-                        <button type='submit'>{`${editingIndex === 0 ? 'Update' : 'Submit'}`}</button>
+                        <button type='submit'>{`${editingIndex !== null ? 'Update' : 'Submit'}`}</button>
                     </div>
                 </form>
 
             </div>}
 
-            {isTable && <button onClick={() => { setIsTable(!true) }}>Add New User</button>}
+            {view && <button onClick={() => { setView(!true) }}>Add New User</button>}
 
-            {isTable && userData && userData.length > 0 && <div>
-                
+            {view && userData && userData.length > 0 && <div>
+
                 <table>
                     <thead>
                         <tr>
@@ -103,7 +102,7 @@ const Crud = () => {
                     </thead>
                     <tbody>
                         {
-                            userData && userData.length > 0 && userData.map((el, index) => {
+                            userData.map((el, index) => {
                                 const { name, email, mobileNo } = el
                                 return (
                                     <tr key={mobileNo}>

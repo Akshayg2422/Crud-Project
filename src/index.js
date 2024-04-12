@@ -16,8 +16,8 @@ root.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             {/* <Counter /> */}
-            {/* <Crud /> */}
-            <CrudUsingRedux />
+            <Crud />
+            {/* <CrudUsingRedux /> */}
         </PersistGate>
     </Provider>
 

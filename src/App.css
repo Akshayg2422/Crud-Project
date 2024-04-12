@@ -45,6 +45,10 @@ th {
   background-color: #f2f2f2;
 }
 
+tbody tr td:hover {
+  background-color: #f5f5f5;
+}
+
 .Edit {
   color: #5bb1ea;
   cursor: pointer;
