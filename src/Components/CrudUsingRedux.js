@@ -145,7 +145,7 @@ const CrudUsingRedux = () => {
             </div>
 
             <div className="text-center">
-              <button type="">{`${editingIndex === 0 ? "Update" : "Submit"
+              <button type="">{`${editingIndex !== null ? "Update" : "Submit"
                 }`}</button>
             </div>
           </form>
